@@ -18,13 +18,11 @@ DebuggerDetectorWin::DebuggerDetectorWin(QObject *parent):
  */
 void DebuggerDetectorWin::run()
 {
-    while(!stopped_) {
 #ifdef Q_OS_WIN
+    while(!stopped_) {
         // user-mode debuggers
         if (IsDebuggerPresent()) {
-            stopped_ = true;
             emit debuggerDetected();
-            break;
         }
         // kernel-mode debuggers
         {
@@ -53,15 +51,12 @@ void DebuggerDetectorWin::run()
                 if (Info.DebuggerEnabled && !Info.DebuggerNotPresent) {
                     // System debugger is present
                     CloseHandle(hProcess);
-                    stopped_ = true;
-                    emit debuggerDetected();
                     break;
                 }
             }
         }
-#endif
         msleep(1000);
     }
-
+#endif
     emit(finished());
 }

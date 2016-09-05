@@ -29,6 +29,6 @@ void DebuggerDetectorUnix::run()
 
         msleep(1000);
     }
-    emit(finished());
 #endif
+    emit(finished());
 }
