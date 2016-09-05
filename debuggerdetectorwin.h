@@ -1,6 +1,5 @@
 #ifndef DEBUGGERDETECTORWIN_H
 #define DEBUGGERDETECTORWIN_H
-
 #include "debuggerdetectorinterface.h"
 
 class DebuggerDetectorWin : public DebuggerDetectorInterface

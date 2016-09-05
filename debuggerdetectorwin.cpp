@@ -1,7 +1,9 @@
 #include "debuggerdetectorwin.h"
+
+#ifdef Q_OS_WIN
 #include <Windows.h>
 #include <stdio.h>
-
+#endif
 /**
  * @brief DebuggerDetectorWin::DebuggerDetectorWin
  * @param parent
@@ -17,6 +19,7 @@ DebuggerDetectorWin::DebuggerDetectorWin(QObject *parent):
 void DebuggerDetectorWin::run()
 {
     while(!stopped_) {
+#ifdef Q_OS_WIN
         // user-mode debuggers
         if (IsDebuggerPresent()) {
             stopped_ = true;
@@ -56,6 +59,7 @@ void DebuggerDetectorWin::run()
                 }
             }
         }
+#endif
         msleep(1000);
     }
 

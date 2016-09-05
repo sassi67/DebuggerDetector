@@ -14,10 +14,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     debuggerdetectorinterface.cpp \
-    debuggerdetectorwin.cpp
+    debuggerdetectorwin.cpp \
+    debuggerdetectorunix.cpp
 
 HEADERS  += mainwindow.h \
     debuggerdetectorinterface.h \
-    debuggerdetectorwin.h
+    debuggerdetectorwin.h \
+    debuggerdetectorunix.h
 
 FORMS    += mainwindow.ui

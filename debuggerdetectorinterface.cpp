@@ -9,7 +9,9 @@ DebuggerDetectorInterface::DebuggerDetectorInterface(QObject *parent) :
 {
     start();
 }
-
+/**
+ * @brief DebuggerDetectorInterface::stop
+ */
 void DebuggerDetectorInterface::stop()
 {
     stopped_ = true;

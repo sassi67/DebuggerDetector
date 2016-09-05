@@ -5,15 +5,16 @@
 #ifdef Q_OS_WIN
 #include "debuggerdetectorwin.h"
 #else
-
+#include "debuggerdetectorunix.h"
 #endif
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
 #ifdef Q_OS_WIN
     dbgDetector_(new DebuggerDetectorWin(this))
 #else
-
+    dbgDetector_(new DebuggerDetectorUnix(this))
 #endif
 
 {
